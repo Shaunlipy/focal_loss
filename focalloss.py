@@ -13,7 +13,7 @@ ce = torch.nn.CrossEntropyLoss()
 # -logp
 out = ce(inputs, target) 
 # p
-out_ = torch.exp(out)
+out_ = torch.exp(-out)
 # (1-p)*logp
 loss = (1 - out_)**2 * out
 print (loss)
@@ -21,7 +21,7 @@ ce = torch.nn.CrossEntropyLoss(weight = weight)
 # -logp
 out = ce(inputs, target) 
 # p
-out_ = torch.exp(out)
+out_ = torch.exp(-out)
 # (1-p)*logp
 loss = (1 - out_)**2 * out
 print (loss)
